@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clã NEXT LEGENDA X - Apresentação</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('nlx-background.webp') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: brightness(0.3);
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.85);
+      border-bottom: 2px solid #7b1f24;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      color: #fff;
+      font-weight: 900;
+      font-size: 1.8rem;
+      letter-spacing: 3px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover, nav a.active {
+      color: #7b1f24;
+      border-bottom: 2px solid #7b1f24;
+      padding-bottom: 3px;
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 40px 30px;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+    }
+
+    section {
+      display: none;
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: #7b1f24;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.85);
+      border-top: 2px solid #7b1f24;
+      padding: 20px 30px;
+      text-align: center;
+      color: #ccc;
+    }
+
+    .instagram-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #7b1f24;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .instagram-btn:hover {
+      background-color: #b43b40;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        margin-left: 15px;
+        font-size: 1rem;
+      }
+
+      main {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NLX</h1>
+    <nav>
+      <a href="#" class="active" data-target="home">Home</a>
+      <a href="#" data-target="sobre">Sobre</a>
+      <a href="#" data-target="contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="active">
+      <h2>Bem-vindo ao Clã NEXT LEGENDA X</h2>
+      <p>Somos o NLX, um clã dedicado a dominar em diversos jogos, com união, estratégia e muita diversão. Junte-se a nós e faça parte dessa lenda!</p>
+    </section>
+
+    <section id="sobre">
+      <h2>Sobre o NLX</h2>
+      <p>📖 <strong>A Origem da NLX</strong></p>
+      <p>Em março de 2020, três amigos criaram um grupo chamado NL2, com um sonho ousado: formar um clube lendário no universo gamer. A ideia era grande, mas o tempo e a vida afastaram os três. O projeto foi deixado de lado, e a chama quase se apagou.</p>
+      <p>Até que, em 2022, um deles reacendeu essa paixão. Conheceu um novo aliado gamer e compartilhou o antigo sonho. Juntos, começaram a reconstruir o que um dia foi chamado de NL2. Em 2023, um novo integrante se juntou à causa — formando novamente um trio lendário.</p>
+      <p>O nome evoluiu. O grupo cresceu. Nascia ali a NEXT LEGENDS X — a NLX.</p>
+      <p>Em 2024, o projeto desacelerou. Mas como toda lenda, ela apenas esperava o momento certo para voltar.</p>
+      <p>E agora, em 2025, a NLX voltou com tudo.<br>
+      Mais do que um clã.<br>
+      Uma irmandade gamer, feita por lendas, forjada no fogo da persistência.</p>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <p>Entre em contato conosco pelas redes sociais.</p>
+      <a class="instagram-btn" href="https://www.instagram.com/nextlegendsx?igsh=MWdqc2pmZTl6OWVmdA==" target="_blank">
+        Acesse o Instagram Oficial
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 NLX - NEXT LEGENDS X. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const links = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('main section');
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        links.forEach(l => l.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+        link.classList.add('active');
+        document.getElementById(link.getAttribute('data-target')).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
